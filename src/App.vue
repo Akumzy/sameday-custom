@@ -1,32 +1,54 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div id="app" class="fixed w-full h-full flex flex-wrap">
+    <app-sidebar />
+    <div class="body h-full flex-1">
+      <app-header />
+      <main class="overflow-y-auto w-full">
+        <router-view />
+        <app-footer />
+      </main>
     </div>
-    <router-view/>
   </div>
 </template>
+<script lang="ts">
+import { defineComponent } from "@vue/composition-api";
+import AppHeader from "./components/AppHeader.vue";
+import AppSidebar from "./components/sidebar/AppSidebar.vue";
+import AppFooter from "./components/AppFooter.vue";
 
-<style>
+export default defineComponent({
+  components: { AppHeader, AppSidebar, AppFooter },
+  name: "App",
+  setup() {
+    return {};
+  }
+});
+</script>
+<style lang="postcss">
+:root {
+  --sidebar-w-open: 240px;
+  --sidebar-w-closed: 80px;
+  --sidebar-w: var(--sidebar-w-open);
+  --header-h: 77px;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  > aside {
+    width: var(--sidebar-w);
+    box-shadow: 0px 3px 50px #0000001f;
+  }
 
-#nav {
-  padding: 30px;
+  > .body {
+    > header {
+      height: var(--header-h);
+      box-shadow: 0px 3px 50px #1877ff1c;
+    }
+    > main {
+      height: calc(100% - var(--header-h));
+    }
+  }
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.icon {
+  fill: currentColor;
+  display: inline-block;
 }
 </style>
