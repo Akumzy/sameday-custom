@@ -3,15 +3,15 @@
   <aside class="h-full duration-200 transition-all" :class="[isOpen?'bg-ui-blue-1':'bg-ui-blue-2']">
     <div class="border-b border-ui-black-10 h-header-h flex items-center relative">
       <!--  -->
-      <div class="px-4" v-if="isOpen">
+      <div class="px-6" v-if="isOpen">
         <button class="text-white border-none outline-none bg-transparent" @click="closeSidebar">
-          <close-vue class="w-8 h-8" />
+          <close-vue class="w-6 h-6" />
         </button>
       </div>
       <!--  -->
       <div class="flex justify-center absolute w-sidebar-closed" v-else>
         <button class="text-white border-none outline-none bg-transparent" @click="openSidebar">
-          <svg class="w-8 h-8 icon" viewBox="0 0 20 20">
+          <svg class="w-6 h-6 icon" viewBox="0 0 20 20">
             <path d="M0 3h20v2h-20v-2zM0 9h20v2h-20v-2zM0 15h20v2h-20v-2z" />
           </svg>
         </button>
@@ -32,16 +32,54 @@
           </list-item>
         </router-link>
         <!--  -->
-        <router-link to="/production-house" tag="div">
-          <list-item :is-open="isOpen">
-            <template #icon>
-              <time-left-vue class="w-5 h-5" />
-            </template>
-            <template #text>
-              <span>Operations</span>
-            </template>
-          </list-item>
-        </router-link>
+
+        <details class="accordion">
+          <summary>
+            <list-item :is-open="isOpen">
+              <template #icon>
+                <time-left-vue class="w-5 h-5" />
+              </template>
+              <template #text>
+                <span>
+                  Operations
+                  <angle-down-vue class="w-4 h-4 ml-2" />
+                </span>
+              </template>
+            </list-item>
+          </summary>
+          <div class="text-xs font-medium">
+            <router-link to="/orders" tag="div">
+              <list-item :is-open="isOpen" class="!text-xs !font-medium">
+                <template #text>
+                  <span>Orders</span>
+                </template>
+              </list-item>
+            </router-link>
+            <router-link to="/production-house" tag="div">
+              <list-item :is-open="isOpen" class="!text-xs !font-medium">
+                >
+                <template #text>
+                  <span>Production House</span>
+                </template>
+              </list-item>
+            </router-link>
+            <router-link to="/orders" tag="div">
+              <list-item :is-open="isOpen" class="!text-xs !font-medium">
+                >
+                <template #text>
+                  <span>Bids</span>
+                </template>
+              </list-item>
+            </router-link>
+            <router-link to="/promotion" tag="div" class="!text-xs !font-medium">
+              <list-item :is-open="isOpen" class="!text-xs !font-medium">
+                <template #text>
+                  <span>Promotion / Discount</span>
+                </template>
+              </list-item>
+            </router-link>
+          </div>
+        </details>
         <!--  -->
         <list-item :is-open="isOpen">
           <template #icon>
@@ -57,7 +95,10 @@
             <shopping-cart-vue class="w-5 h-5" />
           </template>
           <template #text>
-            <span>Supply Store</span>
+            <span>
+              Supply Store
+              <span class="badge">3</span>
+            </span>
           </template>
         </list-item>
         <!--  -->
@@ -105,6 +146,7 @@ import ShoppingCartVue from "../icons/ShoppingCart.vue";
 import SupplyVue from "../icons/Supply.vue";
 import ChatVue from "../icons/Chat.vue";
 import CloseVue from "../icons/Close.vue";
+import AngleDownVue from "../icons/AngleDown.vue";
 
 export default defineComponent({
   components: {
@@ -116,7 +158,8 @@ export default defineComponent({
     ShoppingCartVue,
     SupplyVue,
     ChatVue,
-    CloseVue
+    CloseVue,
+    AngleDownVue
   },
   name: "AppSidebar",
   setup() {
@@ -148,5 +191,12 @@ export default defineComponent({
 .is-active,
 .router-link-exact-active {
   @apply bg-ui-sidebar-list-overlay text-ui-blue-1;
+}
+.badge {
+  font-size: 10px;
+  @apply bg-ui-red-1 w-4 h-4 rounded-full inline-flex items-center justify-center ml-4;
+}
+.accordion > summary::-webkit-details-marker {
+  display: none;
 }
 </style>

@@ -1,11 +1,65 @@
 <template>
-  <svg class="icon" viewBox="0 0 16 16">
-    <path
-      d="M6 9h-5c-0.553 0-1 0.447-1 1v5c0 0.553 0.447 1 1 1h5c0.553 0 1-0.447 1-1v-5c0-0.553-0.447-1-1-1zM5 14h-3v-3h3v3zM6 0h-5c-0.553 0-1 0.447-1 1v5c0 0.553 0.447 1 1 1h5c0.553 0 1-0.447 1-1v-5c0-0.553-0.447-1-1-1zM5 5h-3v-3h3v3zM15 9h-5c-0.553 0-1 0.447-1 1v5c0 0.553 0.447 1 1 1h5c0.553 0 1-0.447 1-1v-5c0-0.553-0.447-1-1-1zM14 14h-3v-3h3v3zM15 0h-5c-0.553 0-1 0.447-1 1v5c0 0.553 0.447 1 1 1h5c0.553 0 1-0.447 1-1v-5c0-0.553-0.447-1-1-1zM14 5h-3v-3h3v3z"
-    />
+  <svg class="icon" viewBox="0 0 36 37">
+    <g transform="translate(-74.089 -383)">
+      <g transform="translate(74 383)">
+        <g class="a" transform="translate(0.089)">
+          <path
+            class="b"
+            d="M5,0H16a0,0,0,0,1,0,0V16a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V5A5,5,0,0,1,5,0Z"
+          />
+          <path
+            class="c"
+            d="M5,1h9a1,1,0,0,1,1,1V14a1,1,0,0,1-1,1H2a1,1,0,0,1-1-1V5A4,4,0,0,1,5,1Z"
+          />
+        </g>
+        <g class="a" transform="translate(20.089)">
+          <path
+            class="b"
+            d="M0,0H11a5,5,0,0,1,5,5V16a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V0A0,0,0,0,1,0,0Z"
+          />
+          <path
+            class="c"
+            d="M2,1h9a4,4,0,0,1,4,4v9a1,1,0,0,1-1,1H2a1,1,0,0,1-1-1V2A1,1,0,0,1,2,1Z"
+          />
+        </g>
+        <g class="a" transform="translate(0.089 21)">
+          <path
+            class="b"
+            d="M0,0H16a0,0,0,0,1,0,0V16a0,0,0,0,1,0,0H5a5,5,0,0,1-5-5V0A0,0,0,0,1,0,0Z"
+          />
+          <path
+            class="c"
+            d="M2,1H14a1,1,0,0,1,1,1V14a1,1,0,0,1-1,1H5a4,4,0,0,1-4-4V2A1,1,0,0,1,2,1Z"
+          />
+        </g>
+        <g class="a" transform="translate(20.089 21)">
+          <path
+            class="b"
+            d="M0,0H16a0,0,0,0,1,0,0V11a5,5,0,0,1-5,5H0a0,0,0,0,1,0,0V0A0,0,0,0,1,0,0Z"
+          />
+          <path
+            class="c"
+            d="M2,1H14a1,1,0,0,1,1,1v9a4,4,0,0,1-4,4H2a1,1,0,0,1-1-1V2A1,1,0,0,1,2,1Z"
+          />
+        </g>
+      </g>
+    </g>
   </svg>
 </template>
     
 <script lang="ts">
 export default {};
 </script>
+    <style scoped>
+.a,
+.c {
+  fill: none;
+}
+.a {
+  stroke: #fcfcfc;
+  stroke-width: 2px;
+}
+.b {
+  stroke: none;
+}
+</style>

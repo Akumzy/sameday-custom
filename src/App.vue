@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="fixed w-full h-full flex flex-wrap">
+  <div id="app" class="fixed w-full h-full flex">
     <app-sidebar />
     <div class="body h-full flex-1">
       <app-header />

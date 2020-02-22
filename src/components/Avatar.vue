@@ -1,5 +1,5 @@
 <template>
-  <figure class="w-full h-full rounded-full overflow-hidden bg-ui-dark-lighter text-white">
+  <figure class="w-full h-full rounded-full overflow-hidden bg-ui-dark-lighter text-white relative">
     <span class="absolute w-full h-full flex justify-center items-center" v-text="initials" />
     <img
       :src="uri"
